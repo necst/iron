@@ -84,3 +84,4 @@ series = {FPGA '21},
 year = {2021}
 }
 ```
+[![DOI](https://zenodo.org/badge/315874294.svg)](https://zenodo.org/badge/latestdoi/315874294)
