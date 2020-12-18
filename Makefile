@@ -101,7 +101,7 @@ DEPLOY_DIR=$(CURR_BUILD_DIR)/deploy
 
 #HLS stuffs
 
-HLS_INCL ?= /xilinx/software/Vivado/2019.2/include
+HLS_INCL ?= $(XILINX_VIVADO)/include   
 
 VIVADO_VERSION = $(shell vivado -version | grep Vivado)
 VIVADO_SCRIPT_DIR ?= $(SCRIPT_DIR)/$(TRGT_PLATFORM)/
@@ -124,7 +124,6 @@ hls_code += $(wildcard $(HLS_DIR)/*.h)
 hls_header := $(wildcard $(HLS_DIR)/*.hpp)
 hls_header += $(wildcard $(HLS_DIR)/*.h)
 
-hls_tb_code += $(HLS_DIR)/utils_debug.hpp
 hls_tb_code += $(wildcard $(HLS_TB_DIR)/*.cpp)
 hls_tb_code += $(wildcard $(HLS_DIR)/*_testbench.cpp)
 

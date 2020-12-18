@@ -35,7 +35,7 @@ FREQZ=200
 #change this value if using an alveo-based, use 300MHz 
 
 
-#Change TRGT_PLATFORM=`pynqz2|ultra96_v2|zcu10|alveo_u200` to target different platforms
+#Change TRGT_PLATFORM=`pynqz2|ultra96_v2|zcu104|alveo_u200` to target different platforms
 
 echo "************************"
 echo "************************"

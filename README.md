@@ -43,7 +43,7 @@
 Follows some makefile parameters
 
 #### General makefile parameters, and design configuration parameter
-* TRGT_PLATFORM=`pynqz2|ultra96_v2|zcu10|alveo_u200`
+* TRGT_PLATFORM=`pynqz2|ultra96_v2|zcu104|alveo_u200`
 * Histogram Computation type HT=`float|fixed`
 * Histogram PE Number PE=`1|2|4|8|16|32|64` 
 * Entropy PE Number PE_ENTROP=`1|2|4|8|16|32`
