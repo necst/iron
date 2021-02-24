@@ -77,10 +77,10 @@ If you find this repository useful, please use the following citation(s):
 
 ```
 @inproceedings{iron2021,
-author = {Conficconi, Davide and D'Arnese, Eleonora and Del Sozzo, Emanuele and Sciuto, Donatella and Santambrogio, Marco D.},
+author = {Conficconi, Davide and D'Arnese, Eleonora and Del Sozzo, Emanuele and Sciuto, Donatella and Santambrogio, Marco D},
 title = {A Framework for Customizable FPGA-based Image Registration Accelerators},
 booktitle = {The 2021 ACM/SIGDA International Symposium on Field-Programmable Gate Arrays},
-series = {FPGA '21},
+pages={251--261},
 year = {2021}
 }
 ```
