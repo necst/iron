@@ -1,7 +1,7 @@
 /******************************************
 *MIT License
 *
-# *Copyright (c) [2020] [Davide Conficconi, Eleonora D'Arnese, Emanuele Del Sozzo, Donatella Sciuto, Marco Domenico Santambrogio]
+# *Copyright (c) [2022] [Davide Conficconi, Eleonora D'Arnese, Emanuele Del Sozzo, Donatella Sciuto, Marco Domenico Santambrogio]
 *
 *Permission is hereby granted, free of charge, to any person obtaining a copy
 *of this software and associated documentation files (the "Software"), to deal
@@ -160,7 +160,7 @@ void compute_mutual_information(hls::stream<Tin>& in0, hls::stream<Tin>& in1, hl
 #else
 	int tmp3 = tmp0 + tmp1 - tmp2;
 #endif
-	Tout tmp4 = -tmp3*scale_factor + MIN_HIST_BITS;
+	Tout tmp4 = -tmp3*scale_factor + MIN_HIST_BITS_NO_OVERFLOW;
 
 	out.write(tmp4);
 

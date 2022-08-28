@@ -1,7 +1,7 @@
 #/******************************************
 #*MIT License
 #*
-#*Copyright (c) [2020] [Davide Conficconi, Eleonora D'Arnese, Emanuele Del Sozzo, Donatella Sciuto, Marco Domenico Santambrogio]
+#*Copyright (c) [2022] [Davide Conficconi, Eleonora D'Arnese, Emanuele Del Sozzo, Donatella Sciuto, Marco Domenico Santambrogio]
 #*
 #*Permission is hereby granted, free of charge, to any person obtaining a copy
 #*of this software and associated documentation files (the "Software"), to deal

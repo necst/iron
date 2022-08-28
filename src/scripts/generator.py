@@ -1,7 +1,7 @@
 # /******************************************
 # *MIT License
 # *
-# *Copyright (c) [2020] [Davide Conficconi, Eleonora D'Arnese, Emanuele Del Sozzo, Donatella Sciuto, Marco Domenico Santambrogio]
+# *Copyright (c) [2022] [Davide Conficconi, Eleonora D'Arnese, Emanuele Del Sozzo, Donatella Sciuto, Marco Domenico Santambrogio]
 # *
 # *Permission is hereby granted, free of charge, to any person obtaining a copy
 # *of this software and associated documentation files (the "Software"), to deal
@@ -43,7 +43,7 @@ def print_mi_config(num_pe, inp_img_bits, inp_img_dim,  derived , pe_entropy, fi
     mi_header.write("/******************************************\n \
 *MIT License\n \
 *\n \
-*Copyright (c) [2020] [Davide Conficconi, Eleonora D'Arnese, Emanuele Del Sozzo, Marco Domenico Santambrogio]\n \
+*Copyright (c) [2022] [Davide Conficconi, Eleonora D'Arnese, Emanuele Del Sozzo, Marco Domenico Santambrogio]\n \
 *\n \
 *Permission is hereby granted, free of charge, to any person obtaining a copy\n \
 *of this software and associated documentation files (the \"Software\"), to deal\n \
@@ -124,6 +124,7 @@ typedef ap_uint<{0}> MY_PIXEL; \n \
 #define J_HISTO_COLS J_HISTO_ROWS\n \
 #define MIN_HIST_BITS {4}\n \
 //4\n \
+#define MIN_HIST_BITS_NO_OVERFLOW MIN_HIST_BITS - 1\n\
 //#define MIN_J_HISTO_BITS (int)(std::ceil(std::log2(MYROWS*MYCOLS)))\n \
 // TODO overflow non contemplato :D, sarebbe + 1\n \
 #define MIN_HIST_PE_BITS (MIN_HIST_BITS - {5})\n \
@@ -253,13 +254,13 @@ class ParametersDerived:
         self.bin_val = bin_val
         self.pe_number = pe_number
         self.entr_acc_size = entr_acc_size
-        self.histos_bits = math.ceil(numpy.log2(in_dim*in_dim))
+        self.histos_bits = math.ceil(numpy.log2(in_dim*in_dim+1))
         self.reduced_lvls = math.ceil(in_bits - bin_val)
         self.quant_levels = math.ceil(2**self.reduced_lvls)
         self.hist_dim = math.ceil(2**self.reduced_lvls)
         self.j_idx_bits = math.ceil(numpy.log2(self.hist_dim*self.hist_dim))
         self.idx_bits = math.ceil(numpy.log2(self.hist_dim))
-        self.reduced_histos_bits = math.ceil(numpy.log2(in_dim*in_dim / pe_number))
+        self.reduced_histos_bits = math.ceil(numpy.log2(in_dim*in_dim / pe_number))+1
         self.maximum_freq = math.ceil(2**in_bits)
         self.bit_entropy = self.derive_bitwidth(histotype)
         self.scale_factor = 1 / (in_dim*in_dim)

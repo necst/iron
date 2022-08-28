@@ -1,7 +1,7 @@
 /******************************************
 *MIT License
 *
-# *Copyright (c) [2020] [Davide Conficconi, Eleonora D'Arnese, Emanuele Del Sozzo, Donatella Sciuto, Marco Domenico Santambrogio]
+# *Copyright (c) [2022] [Davide Conficconi, Eleonora D'Arnese, Emanuele Del Sozzo, Donatella Sciuto, Marco Domenico Santambrogio]
 *
 *Permission is hereby granted, free of charge, to any person obtaining a copy
 *of this software and associated documentation files (the "Software"), to deal
@@ -77,8 +77,9 @@ typedef ap_uint<8> MY_PIXEL;
 
 #define J_HISTO_ROWS 256
 #define J_HISTO_COLS J_HISTO_ROWS
-#define MIN_HIST_BITS 18
+#define MIN_HIST_BITS 19
 //#define MIN_J_HISTO_BITS (int)(std::ceil(std::log2(MYROWS*MYCOLS)))
+#define MIN_HIST_BITS_NO_OVERFLOW MIN_HIST_BITS - 1
 
 #if HIST_PE == 1
 	#define MIN_HIST_PE_BITS (MIN_HIST_BITS)
